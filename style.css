@@ -225,6 +225,13 @@ nav.scrolled { box-shadow: var(--shadow); }
 .pin-icon span { transform: rotate(45deg); font-size: 22px; }
 .pin-shadow { width: 16px; height: 8px; background: rgba(0,0,0,.2); border-radius: 50%; margin-top: 2px; filter: blur(2px); }
 .map-label { position: absolute; top: 28%; left: 36%; transform: translateX(-50%); background: white; padding: 6px 14px; border-radius: 8px; box-shadow: var(--shadow); white-space: nowrap; font-size: 13px; font-weight: 700; color: var(--navy); }
+.about-map-placeholder iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 .about-badge-card { position: absolute; bottom: -20px; right: -20px; background: white; border-radius: var(--r); padding: 18px 22px; box-shadow: var(--shadow-lg); border: 1px solid var(--gray-100); min-width: 180px; }
 .abc-label { font-size: 11px; color: var(--gray-400); font-weight: 600; text-transform: uppercase; letter-spacing: .5px; }
 .abc-val { font-family: var(--fs); font-size: 26px; font-weight: 700; color: var(--blue-light); margin: 2px 0; }
