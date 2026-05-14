@@ -37,3 +37,29 @@ function updateAnnounceBarMargin() {
 }
 window.addEventListener('resize', updateAnnounceBarMargin);
 updateAnnounceBarMargin();
+
+// Auto-highlight current day in clinic hours
+function highlightToday() {
+    const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+    const today = days[new Date().getDay()];
+    
+    // Remove existing today class
+    document.querySelectorAll('.hours-row').forEach(row => row.classList.remove('today'));
+    document.querySelectorAll('.today-chip').forEach(chip => chip.remove());
+    
+    // Find today's row and mark it
+    const rows = document.querySelectorAll('.hours-row');
+    rows.forEach(row => {
+        const dayLabel = row.querySelector('.hours-day');
+        if (dayLabel && dayLabel.textContent.trim().toLowerCase().startsWith(today)) {
+            row.classList.add('today');
+            const chip = document.createElement('span');
+            chip.className = 'today-chip';
+            chip.textContent = 'Today';
+            dayLabel.appendChild(chip);
+        }
+    });
+}
+
+// Run on page load
+document.addEventListener('DOMContentLoaded', highlightToday);
